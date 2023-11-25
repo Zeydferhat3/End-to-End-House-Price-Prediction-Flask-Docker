@@ -1,0 +1,42 @@
+
+.navbar {
+    background-color: #4a5568;
+}
+
+.navbar a {
+    color: #ffffff; 
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 600px; 
+    margin: auto;
+    padding: 2rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2d3748; 
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-primary {
+    background-color: #4299e1; 
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.results {
+    margin-top: 2rem;
+}
+

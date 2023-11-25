@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <!-- Add any additional CSS or styling links here -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+
+</head>
+<body>
+    <div class="container">
+        <h1>House Price Prediction</h1>
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
+            <div class="mb-3">
+                <label for="area" class="form-label">Area:</label>
+                <input type="number" class="form-control" id="area" name="area" required>
+            </div>
+            <div class="mb-3">
+                <label for="bedrooms" class="form-label">Bedrooms:</label>
+                <input type="number" class="form-control" id="bedrooms" name="bedrooms" required>
+            </div>
+            <div class="mb-3">
+                <label for="bathrooms" class="form-label">Bathrooms:</label>
+                <input type="number" class="form-control" id="bathrooms" name="bathrooms" required>
+            </div>
+            <div class="mb-3">
+                <label for="stories" class="form-label">stories:</label>
+                <input type="number" class="form-control" id="stories" name="stories" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="mainroad" class="form-label">Main Road:</label>
+                <select class="form-control" id="mainroad" name="mainroad" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="guestroom" class="form-label">Guest Room:</label>
+                <select class="form-control" id="guestroom" name="guestroom" required>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="basement" class="form-label">Basement:</label>
+                <select class="form-control" id="basement" name="basement" required>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="hotwaterheating" class="form-label">Hot Water Heating:</label>
+                <select class="form-control" id="hotwaterheating" name="hotwaterheating" required>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="airconditioning" class="form-label">Air Conditioning:</label>
+                <select class="form-control" id="airconditioning" name="airconditioning" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="parking" class="form-label">Parking:</label>
+                <input type="number" class="form-control" id="parking" name="parking" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="prefarea" class="form-label">Preferred Area:</label>
+                <select class="form-control" id="prefarea" name="prefarea" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="furnishingstatus" class="form-label">Furnishing Status:</label>
+                <select class="form-control" id="furnishingstatus" name="furnishingstatus" required>
+                    <option value="furnished">Furnished</option>
+                    <option value="semi-furnished">Semi-Furnished</option>
+                    <option value="unfurnished">Unfurnished</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Predict</button>
+            </div>
+        </form>
+
+        {% if results %}
+            <h2>Prediction Result:</h2>
+            <p>The predicted house price is: {{ results }}</p>
+        {% endif %}
+    </div>
+
+    <!-- Add any additional scripts or links here -->
+</body>
+</html>
