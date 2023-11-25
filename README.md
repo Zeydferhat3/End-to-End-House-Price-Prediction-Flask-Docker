@@ -1,1 +1,7 @@
-# hellow world we baout to start htis projcet
+## Dataset Information
+
+- **Title:** Housing Price Prediction
+- **Sources:** 
+  - Kaggle: https://www.kaggle.com/datasets/harishkumardatalab/housing-price-prediction
+  
+
